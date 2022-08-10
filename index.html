@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #999;
+            transition: background 2s;
+        }
+        h2{
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Automatic background color changer</h2>
+    </div>
+
+    <script>
+        function bgcolor(){
+            let values = '0123456789abcdef';
+            let hex = '#';
+
+            for(let i=0; i<6; i++){
+                let index = Math.floor(Math.random()*16)
+                hex += values[index]
+            }
+            document.body.style.background = hex;
+        }
+        setInterval(bgcolor, 2000)
+    </script>
+</body>
+</html>
